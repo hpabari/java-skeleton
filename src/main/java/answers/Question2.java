@@ -51,15 +51,15 @@ public class Question2 {
 				}
 		    }
 		}
-
-		return inflow - outflow;
 		
-		/*
+		if((inflow != 0) && (outflow != 0)){
+			return inflow - outflow;
+		}
+
 		int diff = 0;
 		int diff2 = 0;
 		//if both are empty, sort the cash flow in array and use the smallest value
 		if((inflow == 0) && (outflow == 0)){
-		    Arrays.sort(inSet);
 		    for(int p=0; p < inSet.length; p++){
 				if(inflow < inSet[p]){
 					inflow = inSet[p];
@@ -87,6 +87,5 @@ public class Question2 {
 		else{
 		    return diff2;
 		}
-		*/
 	}
 }
