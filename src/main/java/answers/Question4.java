@@ -6,6 +6,14 @@ public class Question4 {
 
 	public static int selectionFailedTradedesks(String[][] rows, int numberMachines) {
 		
+		if((rows[0].length > 100) || (numberMachines > 100)){
+			return 0;
+		}
+
+		if(rows[0].length < numberMachines){
+			return 0;
+		}
+		
 		int repairTime = 0;
 		int tracknumber = 0;
 		
