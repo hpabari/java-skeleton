@@ -45,7 +45,7 @@ public class Question2 {
 
 		for(int k=0; k < inSet.length; k++){
 		    for(int m=0; m < outSet.length; m++){
-				if((inSet[k] > outSet[m];) || (inSet[k] == outSet[m])){
+				if((inSet[k] > outSet[m]) || (inSet[k] == outSet[m])){
 					inflow = inSet[k];
 					outflow = outSet[m];
 				}
