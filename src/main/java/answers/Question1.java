@@ -7,8 +7,9 @@ public class Question1 {
 		
 		for(int i=0; i<portfolios.length; i++){
 			for(int j=0; j<portfolios.length; j++){
-				if((portfolios[i] ^ portfolios[j]) > n){
-					n = (portfolios[i] ^ portfolios[j]);
+				int merged = portfolios[i] ^ portfolios[j];
+				if(merged > n){
+					n = merged;
 				}
 			}
 		}
