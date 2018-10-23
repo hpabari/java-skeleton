@@ -15,14 +15,32 @@ public class Question5 {
 			if(totalValue == allowedAllocations[i]) {
 				output = 1;
 			}
-			else {
-				breakLoop:
-				for(int k=0; k<allowedAllocations.length; k++){
-					for(int j=0; j<allowedAllocations.length; j++){
+		}	
+		
+		Set<Integer> shares = new HashSet<Integer>();
+
+		while(output == 0) {
+			breakLoop:
+			for(int k=0; k<allowedAllocations.length; k++){
+				for(int j=0; j<allowedAllocations.length; j++){
+					int addedShares = allowedAllocations[k] + allowedAllocations[j];
+					if(addedShares == totalValue) {
 						output = 2;
-						if(allowedAllocations[k] + allowedAllocations[j] == totalValue) {
-							break breakLoop;
-						}
+						break breakLoop;
+					}
+					if(addedShares < totalValue){
+						shares.add(addedShares);
+					}
+				}
+			}
+
+			breakloop2:
+			for(int m:shares){
+				for(int n=0; n<allowedAllocations.length; n++){
+					int addedShares = m + allowedAllocations[n];
+					if(addedShares == totalValue) {
+						output = 3;
+						break breakloop2;
 					}
 				}
 			}
