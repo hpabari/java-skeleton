@@ -1,7 +1,8 @@
 package answers;
 
 import java.util.Arrays;
-import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Question5 {
 
