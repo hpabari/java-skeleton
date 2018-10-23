@@ -19,9 +19,9 @@ public class Question5 {
 		}	
 		
 		Set<Integer> shares = new HashSet<Integer>();
-
-		while(output == 0) {
-			breakLoop:
+		
+		breakLoop:
+		if(output == 0) {	
 			for(int k=0; k<allowedAllocations.length; k++){
 				for(int j=0; j<allowedAllocations.length; j++){
 					int addedShares = allowedAllocations[k] + allowedAllocations[j];
