@@ -1,6 +1,6 @@
 package answers;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Question2 {
 
@@ -38,14 +38,13 @@ public class Question2 {
 		Arrays.sort(inSet);
 		Arrays.sort(outSet);
 
-		
 		//find largest common value in the arrays
 		int inflow = 0;
 		int outflow = 0;
 
-		for(int k=0; k < inSet.length; k++){
-		    for(int m=0; m < outSet.length; m++){
-				if((inSet[k] > outflow) && (inSet[k] == outSet[m])){
+		for(int k=1; k < inSet.length; k++){
+		    for(int m=1; m < outSet.length; m++){
+				if(inSet[k] == outSet[m]){
 					inflow = inSet[k];
 					outflow = outSet[m];
 				}
@@ -56,36 +55,22 @@ public class Question2 {
 			return inflow - outflow;
 		}
 
-		int diff = 0;
-		int diff2 = 0;
+		Set<Integer> diffSet = new HashSet<>();
+
 		//if both are empty, sort the cash flow in array and use the smallest value
 		if((inflow == 0) && (outflow == 0)){
-		    for(int p=0; p < inSet.length; p++){
-				if(inflow < inSet[p]){
-					inflow = inSet[p];
-					diff = inflow - outflow;
-					break;
-				}
-		    }
+			diffSet.add(inSet[1] - outflow);
 
-		    outerloop:
 		    for(int p=(inSet.length - 1); p > 0; p--){
 			inflow = inSet[p];
 				for(int q=(outSet.length - 1); q > 0 ; q--){
 					outflow = outSet[q];
 					if(inflow > outflow){
-						diff2 = inflow - outflow;
-						break outerloop;
+						diffSet.add(inflow - outflow);
 					}
 				}
 		    }
 		}
-
-		if(diff < diff2){
-		    return diff;
-		}
-		else{
-		    return diff2;
-		}
+		return Collections.min(diffSet);
 	}
 }
