@@ -2,6 +2,7 @@ package answers;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Collections;
 
 public class Question6 {
 
