@@ -1,5 +1,6 @@
 package answers;
 
+import java.util.ArrayList;
 import helpers.Edge;
 
 public class Question3 {
