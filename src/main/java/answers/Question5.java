@@ -35,7 +35,7 @@ public class Question5 {
 				}
 			}
 
-			//Set<Integer> shares2 = new HashSet<Integer>();
+			Set<Integer> shares2 = new HashSet<Integer>();
 
 			for(int s:shares){
 				for(int n=0; n<allowedAllocations.length; n++){
@@ -50,7 +50,7 @@ public class Question5 {
 				}
 			}
 
-			/*
+			
 			for(int s:shares2){
 				for(int m=0; m<allowedAllocations.length; m++){
 					int addedShares = s + allowedAllocations[m];
@@ -59,7 +59,7 @@ public class Question5 {
 						break breakLoop;
 					}
 				}
-			}*/
+			}
 		}
 		return output;
 	}
