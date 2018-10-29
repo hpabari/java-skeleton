@@ -44,9 +44,9 @@ public class Question5 {
 						output = 3;
 						break breakLoop;
 					}
-					/*if(addedShares < totalValue){
+					if(addedShares < totalValue){
 						shares2.add(addedShares);
-					}*/
+					}
 				}
 			}
 
